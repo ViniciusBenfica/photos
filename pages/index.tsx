@@ -1,12 +1,22 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeUser, logout, selectUser } from "../redux/Slice/userSlice"
 
 const Home: NextPage = () => {
+
+  const dispatch = useDispatch()
+  const {userName} = useSelector(selectUser)
+
+  console.log(userName)
+
+  const login = () => {
+    
+  }
+
   return (
-    <div >
-      
+    <div>
+        React/Redux
+        <button onClick={() => login()}>MAMIIIGU</button>
     </div>
   )
 }

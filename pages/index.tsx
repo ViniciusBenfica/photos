@@ -4,10 +4,10 @@ import { changeUser, logout, selectUser } from "../redux/Slice/userSlice"
 
 const Home: NextPage = () => {
 
-  const dispatch = useDispatch()
-  const {userName} = useSelector(selectUser)
+  // const dispatch = useDispatch()
+  // const {userName} = useSelector(selectUser)
 
-  console.log(userName)
+  // console.log(userName)
 
   const login = () => {
     

@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeUser, logout, selectUser } from "../redux/Slice/userSlice"
+import { changeUser, logout, selectUser } from "../redux/slice/userSlice"
 
 const Home: NextPage = () => {
 
-  // const dispatch = useDispatch()
-  // const {userName} = useSelector(selectUser)
+  const dispatch = useDispatch()
+  const {userName} = useSelector(selectUser)
 
-  // console.log(userName)
+  console.log(userName)
 
   const login = () => {
     

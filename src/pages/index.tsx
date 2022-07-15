@@ -16,13 +16,21 @@ import {
   Filter
 } from "../styles/index.styled"
 
-interface fotografos {
-
+interface photographers {
+  name: string,
+  place: string,
+  photos: number
 }
 
 const Home: NextPage = () => {
 
-  const [fotografos, setFotografos] = useState<Array<fotografos>>(["vinicius", "paulo", "jp", "Joao", "paulo", "vinicius", "paulo", "jp", "Joao", "paulo"])
+  const [photographers, setPhotographers] = useState<Array<photographers>>([
+    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000}, 
+    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
+    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
+    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
+    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
+  ])
 
   /*   const dispatch = useDispatch()
     const {userName} = useSelector(selectUser)
@@ -59,20 +67,20 @@ const Home: NextPage = () => {
         </Filter>
       </div>
       <Body>
-        {fotografos.map((item: any) => (
+        {photographers.map((item: photographers) => (
           <DivImagens>
             <Image width={270} height={180} src={fotografo}></Image>
             <div className={box({ css: { margin: "5px" } })}>
               <Image src={user} width={10} height={10}></Image>
-              <span className={box({ css: { marginLeft: "10px" } })}>Vinicius Benfica Ruy</span>
+              <span className={box({ css: { marginLeft: "10px" } })}>{item.name}</span>
             </div>
             <div className={box({ css: { margin: "5px" } })}>
               <Image src={camera} width={10} height={10}></Image>
-              <span className={box({ css: { marginLeft: "10px" } })}>Espirito Santo</span>
+              <span className={box({ css: { marginLeft: "10px" } })}>{item.place}</span>
             </div>
             <div className={box({ css: { margin: "5px" } })}>
               <Image src={pin} width={10} height={10}></Image>
-              <span className={box({ css: { marginLeft: "10px" } })}>3000 fotos</span>
+              <span className={box({ css: { marginLeft: "10px" } })}>{item.photos} fotos</span>
             </div>
           </DivImagens>
         ))}

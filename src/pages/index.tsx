@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeUser, logout, selectUser } from "../redux/slice/userSlice"
 import Image from 'next/image'
 import { useState } from 'react'
+import Header from "../components/header/header"
 
 import fotografo from "../public/fotografo.jpg"
 import user from "../public/user_branco.png"
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <Header></Header>
       <h1 className={box({ css: { textAlign: "center" } })}>NOSSOS FOTOGRAFOS</h1>
       <div className={box({ css: { textAlign: "center" } })}>
         <Filter>

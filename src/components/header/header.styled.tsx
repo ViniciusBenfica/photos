@@ -18,4 +18,13 @@ export const Button = styled('div', {
     background: "blue"
 })
 
+export const Options = styled('div', {
+  display: "flex",
+  width: "80%",
+  height: "100px",
+  justifyContent: "space-around",
+  background: "green",
+  alignItems: "center"
+})
+
 export const box = css({})

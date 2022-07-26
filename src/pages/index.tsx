@@ -14,10 +14,14 @@ import {
   box,
   DivImagens,
   Body,
-  Filter
+  Filter,
+  Select,
+  Input
 } from "../styles/index.styled"
+import Router from 'next/router'
 
 interface photographers {
+  ID: number,
   name: string,
   place: string,
   photos: number
@@ -26,11 +30,11 @@ interface photographers {
 const Home: NextPage = () => {
 
   const [photographers, setPhotographers] = useState<Array<photographers>>([
-    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000}, 
-    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
-    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
-    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
-    {name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
+    {ID: 1, name: "Vinicius Benfica", place: "Espirito santo", photos: 3000}, 
+    {ID: 3, name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
+    {ID: 4, name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
+    {ID: 5, name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
+    {ID: 6, name: "Vinicius Benfica", place: "Espirito santo", photos: 3000},
   ])
 
   /*   const dispatch = useDispatch()
@@ -45,33 +49,29 @@ const Home: NextPage = () => {
   return (
     <div>
       <Header></Header>
-      <h1 className={box({ css: { textAlign: "center" } })}>NOSSOS FOTOGRAFOS</h1>
       <div className={box({ css: { textAlign: "center" } })}>
         <Filter>
           <div>
-            <h4>POR ESTADO</h4>
-            <select>
-              <option>TESTE1</option>
-            </select>
+            <h3>ORDENAR POR:</h3>
+            <Select>
+              <option>Nome A a Z</option>
+              <option>Nome Z a A</option>
+              <option>Estado Z a A</option>
+              <option>Estado Z a A</option>
+              <option>Quantidade de fotos crescente</option>
+              <option>Quantidade de fotos decrescente</option>
+            </Select>
           </div>
           <div>
-            <h4>POR FOTOGRAFO</h4>
-            <select>
-              <option>TESTE2</option>
-            </select>
-          </div>
-          <div>
-            <h4>POR EVENTO</h4>
-            <select>
-              <option>TESTE3</option>
-            </select>
+            <h3>PESQUISAR:</h3>
+            <Input placeholder='Pesquise aqui'></Input>
           </div>
         </Filter>
       </div>
       <Body>
         {photographers.map((item: photographers) => (
-          <DivImagens>
-            <Image width={270} height={180} src={fotografo}></Image>
+          <DivImagens onClick={() => Router.push('/' + item.ID)}>
+            <Image width={290} height={200} src={fotografo}></Image>
             <div className={box({ css: { margin: "5px" } })}>
               <Image src={user} width={10} height={10}></Image>
               <span className={box({ css: { marginLeft: "10px" } })}>{item.name}</span>

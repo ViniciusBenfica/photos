@@ -11,7 +11,6 @@ import {
     Button,
     Options
 } from "./header.styled"
-import Router from "next/router";
 
 const Header: NextPage = () => {
     const { isLogged, userName } = useSelector(selectUser)

@@ -11,7 +11,7 @@ export const Body = styled('div', {
   justifyItems: "center",
   // background: "red"
 })
-  
+
 export const DivImagens = styled('div', {
   background: skyDark.sky1,
   color: sky.sky1,
@@ -21,25 +21,11 @@ export const DivImagens = styled('div', {
   overflow: "hidden",
 
   '&:hover': {background: skyDark.sky3}
-
 })
 
-export const Filter = styled('div', {
-  display: "flex",
-  margin: "20px auto 40px auto",
-  justifyContent: "space-around",
-  width: 800,
-  // background: "red"
+export const Title = styled('div', {
+  margin: "auto",
 })
-
-export const Select = styled('select', {
-  width: 250,
-  height: 30,
-})
-
-export const Input = styled('input', {
-  width: 250,
-  height: 30,
-})
+  
 
 export const box = css({})

@@ -1,8 +1,8 @@
 import { NextPage } from "next";
-import Image from 'next/image'
 import { useEffect, useState } from "react";
-import Logo from "../../public/pin.png"
 import Header from "../components/header/header";
+import { useDispatch, useSelector } from 'react-redux'
+import { login, logout, selectUser } from "../redux/slice/userSlice"
 
 interface user{
     login: string,
@@ -11,10 +11,11 @@ interface user{
 
 const Login: NextPage = () => {
     const [user, setUser] = useState<user>({login: "", password: ""})
-
-    useEffect(() => {
-        console.log(user)
-    },[user])
+    const dispatch = useDispatch()
+    
+    const logar = () => {
+        dispatch(login(user.login))
+    }
 
     return(
         <div>
@@ -23,7 +24,7 @@ const Login: NextPage = () => {
             <input onChange={(e) => setUser((prevState) => ({...prevState, login: e.target.value}))} placeholder="E-mail"></input>
             <input onChange={(e) => setUser((prevState) => ({...prevState, password: e.target.value}))} placeholder="******"></input>
             <button>Esqueci a senha</button>
-            <button>Acessar Conta</button>
+            <button onClick={() => logar()}>Acessar Conta</button>
         </div>
     )
 }

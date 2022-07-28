@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeUser, logout, selectUser } from "../redux/slice/userSlice"
+import { login, logout, selectUser } from "../redux/slice/userSlice"
 import Image from 'next/image'
 import { useState } from 'react'
 import Header from "../components/header/header"

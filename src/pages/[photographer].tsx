@@ -3,7 +3,13 @@ import Image from "next/image";
 import { useState } from "react";
 import Header from "../components/header/header";
 import fotografo from "../public/fotografo.jpg"
-import {DivImagens, Body, box} from "../styles/photographer.styled"
+
+import {
+  DivImagens,
+  Body,
+  box,
+  Title
+} from "../styles/photographer.styled"
 
 interface photographer {
     ID: number,
@@ -25,8 +31,11 @@ const Photographer: NextPage = () => {
     return(
         <div>
             <Header></Header>
-            <Image width={500} height={500} src={fotografo}></Image>
-            <h1>EVENTOS</h1>
+              <h1 className={box({ css: { textAlign: "center" }})}>Vinicius Benfica Ruy</h1>
+              <div className={box({ css: { textAlign: "center" }})}>
+                <Image width={350} height={350} src={fotografo}></Image>
+              </div>
+              <h1 className={box({ css: { textAlign: "center" }})}>EVENTOS</h1>
             <Body>
                 {events.map((item) => (
                     <DivImagens>

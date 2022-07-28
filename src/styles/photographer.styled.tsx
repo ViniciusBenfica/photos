@@ -13,16 +13,19 @@ export const Body = styled('div', {
 })
 
 export const DivImagens = styled('div', {
-    background: skyDark.sky1,
-    color: sky.sky1,
-    width: 290,
-    height: 290,
-    borderRadius: 10,
-    overflow: "hidden",
-  
-    '&:hover': {background: skyDark.sky3}
-  
-  })
+  background: skyDark.sky1,
+  color: sky.sky1,
+  width: 290,
+  height: 290,
+  borderRadius: 10,
+  overflow: "hidden",
+
+  '&:hover': {background: skyDark.sky3}
+})
+
+export const Title = styled('div', {
+  margin: "auto",
+})
   
 
 export const box = css({})
